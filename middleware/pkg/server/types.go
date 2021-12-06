@@ -11,5 +11,7 @@ type Server struct {
 }
 
 func NewServer(cacheTimeout int64) *Server {
-	return &Server{Cache: cache.NewCache(cacheTimeout), Router: setupRouter()}
+	s := &Server{Cache: cache.NewCache(cacheTimeout), Router: setupRouter()}
+	s.Routes()
+	return s
 }
